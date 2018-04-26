@@ -1,0 +1,43 @@
+{
+  "id": "{{service.name}}",
+  "cpus": {{service.cpus}},
+  "mem": {{service.mem}},
+  "instances": {{service.nodes}},
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "{{resource.assets.container.docker.pingfedadm}}",
+      "network": "HOST"
+    }
+  },
+  "portDefinitions": [
+    {   
+        "port": 999,
+        "protocol": "tcp",
+        "name": "instance"
+    }   
+    {   
+        "port": 7600,
+        "protocol": "tcp",
+        "name": "member"
+    }   
+    {   
+        "port": 7600,
+        "protocol": "tcp",
+        "name": "member"
+    }
+  ],
+  "labels": {
+    "DCOS_SERVICE_NAME": "{{service.name}}",
+    "DCOS_SERVICE_SCHEME": "http"
+  },
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "gracePeriodSeconds": 120,
+      "intervalSeconds": 60,
+      "timeoutSeconds": 10,
+      "maxConsecutiveFailures": 3
+    }
+  ]
+}

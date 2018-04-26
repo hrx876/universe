@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "properties": {
+    "service": {
+      "description": "Ping Federation Service properties.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "The name of this DC/OS service.",
+          "type": "string",
+          "default": "PingFederation"
+        },
+        "cpus": {
+          "description": "CPU shares to allocate to this instance.",
+          "type": "number",
+          "default": 1.0,
+          "minimum": 1.0
+        },
+        "mem": {
+          "description": "Memory to allocate to this instance.",
+          "type": "number",
+          "default": 2048.0,
+          "minimum": 1024.0
+        },
+        "nodes": {
+          "description": "Number of Federation instances. By default, this is 1.",
+          "type": "integer",
+          "default": 1
+        },
+        "host-volume": {
+          "description": "The location of a volume on the host to be used for persisting data.",
+          "type": "string",
+          "default": "/var/PingFederation"
+        }
+      }
+    }
+  }, 
+  "required": [
+    "name",
+    "cpus",
+    "mem",
+    "host-volume",
+    "database"
+  ]
+}

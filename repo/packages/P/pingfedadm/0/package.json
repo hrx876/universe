@@ -1,0 +1,16 @@
+{
+    "packagingVersion": "4.0",
+    "minDcosReleaseVersion": "1.10",
+    "name": "pingfedadm",
+    "version": "9.0.3",
+    "maintainer": "hasan@ge.com",
+    "description": "PingFed Set on Mesosphere DC/OS",
+    "selected": false,
+    "framework": true,
+    "tags": [
+        "pingfed"
+    ],
+    "postInstallNotes": "The DC/OS PingFedAdm service is being installed. \n\n\tDocumentation: https://docs.mesosphere.com/service-docs/percona-mongo/\n\tIssues: mesosphere@percona.com",
+    "postUninstallNotes": "DC/OS PingFed is being uninstalled.",
+    "preInstallNotes": "Default configuration requires 1 agent nodes each with: 1.0 CPU | 2048 MB MEM"
+}

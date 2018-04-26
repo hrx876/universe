@@ -1,0 +1,9 @@
+{
+  "assets": {
+   "container": {
+      "docker": {
+       "pingfedadm": "456624778202.dkr.ecr.us-east-1.amazonaws.com/dev-torq:latest"
+      }
+    }
+  }
+}
